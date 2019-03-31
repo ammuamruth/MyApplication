@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#2c70dd"
+    tools:context=".Login">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="198dp"
+            app:srcCompat="@drawable/logo" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:layout_alignBottom="@+id/imageView"
+            android:layout_gravity="center"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="-95dp"
+            android:background="@drawable/round_button"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Phone Number"
+            android:inputType="phone"
+            android:textAlignment="center"
+            android:textColor="@color/Black"
+            android:textColorHint="@color/Black" />
+
+        <TextView
+            android:text="Format: +91 8888888888"
+            android:id="@+id/format"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/phone"
+            android:layout_marginTop="95dp"
+            android:gravity="center"
+            android:textColor="@color/white"/>
+
+
+        <EditText
+            android:id="@+id/verify"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:layout_alignBottom="@+id/imageView"
+            android:layout_gravity="center"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="-184dp"
+            android:background="@drawable/round_button"
+            android:ems="10"
+            android:hint="Enter Your OTP"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textColor="@color/Black"
+            android:textColorHint="@color/Black"
+            android:visibility="invisible"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/otp"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/round_btn"
+            android:text="Send OTP"
+            android:textColor="@color/Black"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/Login"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_alignEnd="@+id/otp"
+            android:layout_alignBottom="@+id/phone"
+            android:layout_gravity="center"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/round_btn"
+            android:text="Verify"
+            android:textColor="@color/Black"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            tools:visibility="visible"
+            android:layout_alignRight="@+id/otp" />
+</LinearLayout>
+</LinearLayout>
