@@ -4,55 +4,70 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.text.Html;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import java.util.ArrayList;
+
 public class Main3Activity extends AppCompatActivity {
-    CardView amruth, abhi, ram;
+    private static final String TAG = "MainActivity";
 
-//   Global declearation
-
+    //vars
+    private ArrayList<String> mRate = new ArrayList<>();
+    private ArrayList<String> mdescreption = new ArrayList<>();
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
-        //functions
 
-        //backbuton
-        amruth = (CardView) findViewById(R.id.card2);
-        abhi = (CardView) findViewById(R.id.card1);
-        ram = (CardView) findViewById(R.id.card4);
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#ffffff'>Bookings</font>"));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        amruth.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Main3Activity.this, MapsActivity.class);
-                startActivity(i);
-            }
-        });
-
-        abhi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Main3Activity.this, profileActivity.class);
-                startActivity(i);
-
-
-            }
-        });
-
-        ram.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Main3Activity.this, searchActivity.class);
-                startActivity(i);
-            }
-        });
+        getcontent();
 
 
     }
+
+    private void getcontent() {
+
+        //
+        mRate.add("2");
+        mdescreption.add("address comes here");
+
+        mRate.add("3");
+        mdescreption.add("address comes here");
+
+        mRate.add("4");
+        mdescreption.add("address comes here");
+
+        mRate.add("1");
+        mdescreption.add("address comes here");
+
+        mRate.add("2");
+        mdescreption.add("mail comes here");
+
+        initRecyclerView();
+
+    }
+
+    private void initRecyclerView() {
+
+        Log.d(TAG, "initRecyclerView: init recyclerview");
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(layoutManager);
+        RecyclerviewAdapter adapter = new RecyclerviewAdapter(this, mRate, mdescreption);
+        recyclerView.setAdapter(adapter);
+
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

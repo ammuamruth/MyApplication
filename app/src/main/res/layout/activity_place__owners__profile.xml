@@ -58,7 +58,6 @@
         android:textColor="@color/Black"
         android:background="@drawable/round_edit"/>
 
-
     <EditText
         android:id="@+id/address"
         android:layout_width="match_parent"
