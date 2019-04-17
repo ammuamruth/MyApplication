@@ -51,7 +51,7 @@ public class Login extends AppCompatActivity {
         }
 
         verify = (Button)findViewById (R.id.Login);
-        sendOTP = (Button)findViewById (R.id.otp);
+          sendOTP = (Button)findViewById (R.id.otp);
         mobile = (EditText)findViewById (R.id.phone);
         Pass = (EditText)findViewById (R.id.verify);
         loadingbar = new ProgressDialog (this);

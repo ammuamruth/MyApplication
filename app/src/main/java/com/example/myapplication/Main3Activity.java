@@ -31,7 +31,6 @@ public class Main3Activity extends AppCompatActivity {
 
         getcontent();
 
-
     }
 
     private void getcontent() {
