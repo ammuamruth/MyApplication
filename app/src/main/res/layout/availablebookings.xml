@@ -26,7 +26,7 @@
                 android:id="@+id/rupees"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:text="₹ 2650"
+                android:text=" "
                 android:textColor="@color/Black"
                 android:textSize="20dp"
                 android:textAlignment="center"/>
@@ -54,7 +54,7 @@
                 android:id="@+id/address"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Your Amc Terms And Conditions Your Amc Terms And ConditionsYour Amc Terms And Conditions Your Amc Terms And Conditions"
+                android:text=""
                 android:textColor="@color/Black"
                 android:textSize="20dp"
                 android:textAlignment="center"/>

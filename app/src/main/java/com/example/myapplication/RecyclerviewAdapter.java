@@ -10,6 +10,11 @@ package com.example.myapplication;
  import android.widget.Button;
  import android.widget.TextView;
  import android.widget.Toast;
+
+ import com.google.firebase.auth.FirebaseAuth;
+ import com.google.firebase.database.DatabaseReference;
+ import com.google.firebase.database.FirebaseDatabase;
+
  import java.util.ArrayList;
 
 public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapter.ViewHolder> {
@@ -33,22 +38,26 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         Log.d(TAG, "onBindViewHolder: called.");
 
         holder.rate.setText(mPrice.get(position));
         holder.descreption.setText(mDescreption.get(position));
 
+        holder.currentState = "new";
         holder.purchase.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(mContext, "You have Choosen"+ mPrice.get(position) + " Plan", Toast.LENGTH_SHORT).show();
+
+
+                Toast.makeText(mContext, "You have Choosen"  + mDescreption.get(position) + " slot", Toast.LENGTH_SHORT).show();
                 /*Intent i = new Intent(view.getContext(),Payment.class);
                 view.getContext().startActivity(i);*/
 
             }
         });
     }
+
 
     @Override
     public int getItemCount() {
@@ -69,13 +78,24 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
 
         TextView rate,descreption;
         Button purchase;
+        private FirebaseAuth mAuth;
+        private String SenderId,currentState,reciverId;
+        private DatabaseReference myRef,bookRequest;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
+
+            mAuth = FirebaseAuth.getInstance ();
+            SenderId = mAuth.getCurrentUser ().getUid ();
+            myRef = FirebaseDatabase.getInstance ().getReference ().child ("Customer");
+            bookRequest = FirebaseDatabase.getInstance ().getReference ().child ("Customer").child (SenderId).child ("Booking Requests");
+
             rate        = itemView.findViewById(R.id.rupees);
             descreption = itemView.findViewById(R.id.address);
             purchase    = itemView.findViewById(R.id.buy);
+
+
         }
     }
 }

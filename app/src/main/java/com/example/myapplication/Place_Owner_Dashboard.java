@@ -10,16 +10,30 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class Place_Owner_Dashboard extends AppCompatActivity {
 
     Button correctButton,wrongButton;
     AlertDialog.Builder builder;
     CardView card1;
+    private String user;
+
+    FirebaseAuth mAuth;
+    DatabaseReference rootRef,demoRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_place__owner__dashboard);
+
+        mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser().getUid();
+
+        rootRef = FirebaseDatabase.getInstance().getReference();
+        demoRef = rootRef.child(user).child(user);
 
         correctButton = (Button)findViewById(R.id.correct);
         wrongButton = (Button)findViewById(R.id.wrong);

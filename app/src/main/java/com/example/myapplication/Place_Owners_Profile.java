@@ -123,7 +123,7 @@ public class Place_Owners_Profile extends AppCompatActivity implements LocationL
                 FirebaseUser user = mAuth.getCurrentUser();
                 myref.child(user.getUid()).setValue(usersprofile);
 
-                Intent i = new Intent(Place_Owners_Profile.this, Main3Activity.class);
+                Intent i = new Intent(Place_Owners_Profile.this, Place_Owner_Dashboard.class);
                 startActivity(i);
                 finish();
                 Toast.makeText(Place_Owners_Profile.this, "Profile Updated", Toast.LENGTH_SHORT).show();

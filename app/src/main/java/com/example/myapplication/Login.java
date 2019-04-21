@@ -31,7 +31,7 @@ public class Login extends AppCompatActivity {
     private EditText mobile,Pass;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks callbacks;
     private String mVerificationId;
-    private PhoneAuthProvider.ForceResendingToken mResendToken;
+       private PhoneAuthProvider.ForceResendingToken mResendToken;
     private TextView format;
 
 

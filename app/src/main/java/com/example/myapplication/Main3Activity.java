@@ -36,20 +36,20 @@ public class Main3Activity extends AppCompatActivity {
     private void getcontent() {
 
         //
+        mRate.add("1");
+        mdescreption.add("amruth");
+
         mRate.add("2");
-        mdescreption.add("address comes here");
+        mdescreption.add("abhi");
 
         mRate.add("3");
-        mdescreption.add("address comes here");
+        mdescreption.add("tejas");
 
-        mRate.add("4");
-        mdescreption.add("address comes here");
-
-        mRate.add("1");
-        mdescreption.add("address comes here");
+        mRate.add("5");
+        mdescreption.add("mark");
 
         mRate.add("2");
-        mdescreption.add("mail comes here");
+        mdescreption.add("mark");
 
         initRecyclerView();
 
